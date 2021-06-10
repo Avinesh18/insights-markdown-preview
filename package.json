@@ -1,0 +1,38 @@
+{
+	"name": "insights-markdown-preview",
+	"displayName": "insights-markdown-preview",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.15.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage: markdown"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"markdown.previewScripts": [
+			"./main.bundle.js"
+		],
+		"markdown.markdownItPlugins": true
+	},
+	"dependencies": {
+		"d3": "^6.7.0",
+		"markdown-it-container": "^3.0.0"
+	},
+	"scripts": {
+		"prepublish": "npm run build",
+		"build": "webpack-cli --mode=production"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.4.0",
+		"babel-loader": "^8.0.5",
+		"css-loader": "^2.1.1",
+		"mini-css-extract-plugin": "^0.5.0",
+		"webpack": "^4.44.1",
+		"webpack-cli": "^3.3.7"
+	}
+}
